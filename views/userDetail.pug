@@ -1,0 +1,14 @@
+extends layouts/main
+
+block content
+    .user-profile
+        .user-profile__header
+            img(src=user.avatarUrl)
+            h5=user.name
+            h4=user.email
+        if user.id === loggedUser.id
+            .user-profile__btns
+                a(href=`/users${routes.editProfile}`)
+                    button ✏️ Edit Profile
+                a(href=`/users${routes.changePassword}`)
+                    button 🔒 Change Password

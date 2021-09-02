@@ -1,0 +1,8 @@
+extends layouts/main
+
+block content
+    form(action=routes.editVideo(video.id), method="post")
+        input(type="text", placeholder = "Title", name="title",required="true", value=video.title)
+        textarea(name="description", placeholder="Description",required="true")=video.description
+        input(type="submit", value="Update Video",required="true")
+    a(href=routes.deleteVideo(video.id)) Delete Video
